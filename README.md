@@ -7,7 +7,7 @@
 
 ****
 
-**main.js：**
+**.vue：**
 
 ```javascript
 import { btnBar, tableBar, formBar } from 'mmkk-plug'
