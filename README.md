@@ -10,8 +10,13 @@
 **main.js：**
 
 ```javascript
-import BtnPlug from 'mmkk-plug'
-Vue.use(BtnPlug)
+import { btnBar, tableBar, formBar } from 'mmkk-plug'
+
+components: {
+  formBar,
+  tableBar,
+  btnBar
+},
 ```
 
 ****
