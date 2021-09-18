@@ -1,7 +1,7 @@
 {
   "name": "mmkk-plug",
-  "description": "管理端插件",
-  "version": "1.0.7",
+  "description": "管理端插件库",
+  "version": "1.1.0",
   "author": "tempest_rise_npm",
   "license": "MIT",
   "private": false,

@@ -18,6 +18,9 @@ components: {
   btnBar
 },
 ```
+<!-- ```javascript
+require('mmkkPlug')
+``` -->
 
 ****
 

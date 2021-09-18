@@ -64,8 +64,8 @@ export default {
   watch: {},
   // 生命周期 - 创建完成（可以访问当前this实例）
   created() {
-    // console.log('进入按钮组件', this.$router.history.current.meta.resource)
-    if (this.isAuthority) {
+    console.log('进入按钮组件')
+    if (this.isAuthority && this.$router) {
       var newlist = this.$router.history.current.meta.resource
       newlist.forEach(element => {
         if (element.name && element.resourceType == 30) {
@@ -77,69 +77,15 @@ export default {
       this.list = this.btnList
     }
   },
-  // 生命周期 - 挂载完成（可以访问DOM元素）
-  mounted() {
-    // bus.$on('tableListData', (msg) => {
-    //   this.showHide = msg
-    // })
-  },
-  beforeCreate() { }, // 生命周期 - 创建之前
-  beforeMount() { }, // 生命周期 - 挂载之前
-  beforeUpdate() { }, // 生命周期 - 更新之前
-  updated() { }, // 生命周期 - 更新之后
-  beforeDestroy() {
-    // this.bus.$off('tableListData')
-  }, // 生命周期 - 销毁之前
-  destroyed() { }, // 生命周期 - 销毁完成
-  activated() { }, // 如果页面有keep-alive缓存功能，这个函数会触发
   // 方法集合
   methods: {
     BtnClick(row, index) {
       this.$emit('btnClick', row, index)
-    },
-
-    // 选择文件 文件上传
-    beforeUpload(file, item, index) {
-      // console.log(file, item, index)
-      // debugger
-      const fileSize = file.size / 1024 / 1024 < 10
-      // 判断文件大小
-      if (fileSize) {
-        if (item.returnType == 1) {
-          const code = item.code
-          const val = {
-            file,
-            item,
-            code
-          }
-          this.$emit('btnClick', val, index)
-          return false
-        }
-        return true
-      }
-      this.$message({
-        message: '文件过大，请分批上传',
-        type: 'warning'
-      })
-      return false
-    },
-    // 文件提交
-    onSuccess(results, header, item, index) {
-      // console.log('文件提交', results, header)
-      const code = item.code
-      const val = {
-        results,
-        header,
-        item,
-        code
-      }
-      this.$emit('btnClick', val, index)
     }
   }
 }
 </script>
 <style lang="scss" scoped>
-/* @import url(); 引入公共css类 */
 .btn-bar {
   float: right;
   padding: 3px 0;
@@ -149,22 +95,6 @@ export default {
     margin: 0 10px;
     &:last-child {
       margin-right: 0;
-    }
-  }
-}
-
-.tip-bar {
-  line-height: 35px;
-  font-size: 14px;
-  color: #333;
-  span {
-    margin-right: 20px;
-    border-left: 3px #cf995f solid;
-    padding-left: 5px;
-    i {
-      font-weight: bolder;
-      font-style: normal;
-      color: #ff0000;
     }
   }
 }

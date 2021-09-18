@@ -1,4 +1,4 @@
-import tableBar from './tableMain.vue';
+import tableBar from './index.vue';
 
 tableBar.install = Vue => Vue.component(tableBar.name, tableBar);//注册组件
 

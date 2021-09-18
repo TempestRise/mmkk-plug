@@ -1,4 +1,4 @@
-import formBar from './fromMain.vue';
+import formBar from './index.vue';
 
 formBar.install = Vue => Vue.component(formBar.name, formBar);//注册组件
 

@@ -1,6 +1,6 @@
 var path = require('path')
 var webpack = require('webpack')
-// 执行环境
+
 const NODE_ENV = process.env.NODE_ENV;
 console.log("-----NODE_ENV===",NODE_ENV);
 
